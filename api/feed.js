@@ -68,8 +68,9 @@ ${items}
 `;
 
   res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
-  // חצי שעה של מטמון: מספיק כדי לא להעיר את הפונקציה על כל בקשה,
-  // וקצר מספיק כדי שפרק של 15:00 יופיע בפועל בסביבות 15:00.
-  res.setHeader('Cache-Control', 's-maxage=900, stale-while-revalidate=900');
+  // מטמון קצר בכוונה. עם s-maxage ארוך, פרק שאמור לעלות ב-15:00 היה מוגש
+  // מהמטמון עוד רבע שעה אחרי - ו-stale-while-revalidate היה מאריך את זה עוד.
+  // הפונקציה זולה (קריאת JSON והרכבת מחרוזת), אז אין מה לחסוך כאן.
+  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=60');
   res.status(200).send(xml);
 };
