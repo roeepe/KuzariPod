@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>לומדים כוזרי עם הרב בן ציון אוריאל</title>
+<meta name="description" content="כל השיעורים על ספר הכוזרי מאת הרב בן ציון אוריאל — מההקדמה ועד סוף מאמר חמישי. להאזנה ישירה או דרך הפודקאסט.">
+<meta property="og:title" content="לומדים כוזרי עם הרב בן ציון אוריאל">
+<meta property="og:description" content="כל השיעורים על ספר הכוזרי — מההקדמה ועד סוף מאמר חמישי.">
+<meta property="og:image" content="cover.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F7F3EA">
+<link rel="icon" href="cover.jpg">
+<link rel="alternate" type="application/rss+xml" title="לומדים כוזרי" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EA; --surface:#FFFDF8; --surface-2:#F1EADC;
+  --ink:#241F17; --ink-2:#5A5143; --ink-3:#877C69;
+  --line:#E2D8C4; --line-2:#CFC2A6;
+  --accent:#8A6D3B; --accent-ink:#FFFDF8; --accent-soft:#EFE5D0;
+  --ring:#8A6D3B;
+  --r-sm:8px; --r:12px; --r-lg:18px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px;
+  --shadow:0 1px 2px rgba(36,31,23,.05), 0 6px 20px rgba(36,31,23,.06);
+  --player-h:0px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#16130E; --surface:#1E1A14; --surface-2:#262117;
+    --ink:#F2ECE0; --ink-2:#C8BEAB; --ink-3:#9A8F7B;
+    --line:#332C21; --line-2:#463D2E;
+    --accent:#D9BE86; --accent-ink:#1A160F; --accent-soft:#2C2418;
+    --ring:#D9BE86;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.35);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans Hebrew","Arial Hebrew",Arial,system-ui,sans-serif;
+  font-size:16px; line-height:1.6;
+  padding-bottom:calc(var(--player-h) + env(safe-area-inset-bottom));
+}
+a{color:var(--accent); text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ring); outline-offset:2px; border-radius:var(--r-sm)}
+.wrap{max-width:820px; margin:0 auto; padding:0 var(--s4)}
+.skip{position:absolute; inset-inline-start:-9999px}
+.skip:focus{position:static; display:inline-block; margin:var(--s2); padding:var(--s2) var(--s3);
+  background:var(--accent); color:var(--accent-ink); border-radius:var(--r-sm)}
+
+/* ---------- hero ---------- */
+header.hero{padding:var(--s7) 0 var(--s5); border-bottom:1px solid var(--line)}
+.hero-grid{display:flex; gap:var(--s5); align-items:flex-start; flex-wrap:wrap}
+.cover{width:132px; height:132px; flex:none; border-radius:var(--r-lg);
+  border:1px solid var(--line-2); object-fit:cover; box-shadow:var(--shadow)}
+.hero-text{flex:1 1 380px; min-width:0}
+h1{margin:0 0 var(--s2); font-size:clamp(1.65rem,4.6vw,2.4rem); font-weight:700; line-height:1.2; letter-spacing:-.01em}
+.byline{margin:0 0 var(--s3); color:var(--ink-2); font-weight:500}
+.blurb{margin:0 0 var(--s4); color:var(--ink-2); max-width:58ch}
+.actions{display:flex; gap:var(--s2); flex-wrap:wrap}
+.btn{display:inline-flex; align-items:center; gap:var(--s2); min-height:44px;
+  padding:var(--s2) var(--s4); border-radius:999px; border:1px solid var(--line-2);
+  background:var(--surface); color:var(--ink); font:inherit; font-weight:600; font-size:.94rem;
+  cursor:pointer; text-decoration:none; transition:background .18s ease, border-color .18s ease}
+.btn:hover{background:var(--surface-2); border-color:var(--accent)}
+.btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent); filter:brightness(1.08)}
+.btn svg{width:18px; height:18px; flex:none}
+
+/* ---------- controls ---------- */
+.controls{position:sticky; top:0; z-index:20; background:var(--bg);
+  padding:var(--s3) 0; border-bottom:1px solid var(--line)}
+.search{position:relative; display:block}
+.search svg{position:absolute; inset-inline-start:14px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; color:var(--ink-3); pointer-events:none}
+input[type=search]{width:100%; min-height:48px; padding:var(--s3) var(--s4);
+  padding-inline-start:44px; font:inherit; font-size:16px; color:var(--ink);
+  background:var(--surface); border:1px solid var(--line-2); border-radius:var(--r);
+  -webkit-appearance:none}
+input[type=search]::placeholder{color:var(--ink-3)}
+.chips{display:flex; gap:var(--s2); margin-top:var(--s3); overflow-x:auto;
+  scrollbar-width:none; padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none; min-height:38px; padding:0 var(--s3); border-radius:999px;
+  border:1px solid var(--line-2); background:var(--surface); color:var(--ink-2);
+  font:inherit; font-size:.88rem; font-weight:600; cursor:pointer; white-space:nowrap;
+  transition:background .18s ease, color .18s ease, border-color .18s ease}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed=true]{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+
+/* ---------- list ---------- */
+main{padding:var(--s5) 0 var(--s7)}
+.listbar{display:flex; align-items:center; justify-content:space-between; gap:var(--s3);
+  flex-wrap:wrap; margin:0 0 var(--s4)}
+.count{color:var(--ink-3); font-size:.88rem; margin:0}
+.sort{display:flex; gap:var(--s2)}
+h2.section{margin:var(--s6) 0 var(--s3); font-size:1.02rem; font-weight:700; color:var(--ink-2);
+  letter-spacing:.02em; display:flex; align-items:center; gap:var(--s3)}
+h2.section::after{content:""; flex:1; height:1px; background:var(--line)}
+h2.section:first-of-type{margin-top:0}
+ol.eps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--s2)}
+.ep{display:grid; grid-template-columns:auto 1fr; gap:var(--s3); align-items:start;
+  padding:var(--s3) var(--s4); background:var(--surface);
+  border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow)}
+.ep.is-playing{border-color:var(--accent); background:var(--accent-soft)}
+.ep.upcoming{background:transparent; box-shadow:none; border-style:dashed}
+.play{width:44px; height:44px; flex:none; border-radius:50%; border:1px solid var(--line-2);
+  background:var(--surface-2); color:var(--accent); cursor:pointer;
+  display:grid; place-items:center; transition:background .18s ease, transform .18s ease}
+.play:hover{background:var(--accent); color:var(--accent-ink)}
+.play:active{transform:scale(.94)}
+.play svg{width:20px; height:20px}
+.locked{width:44px; height:44px; flex:none; display:grid; place-items:center; color:var(--ink-3)}
+.locked svg{width:18px; height:18px}
+.ep-body{min-width:0}
+.ep-title{margin:0; font-size:1rem; font-weight:600; line-height:1.45; overflow-wrap:anywhere}
+.ep-meta{margin:var(--s1) 0 0; font-size:.82rem; color:var(--ink-3);
+  display:flex; flex-wrap:wrap; gap:var(--s1) var(--s3); font-variant-numeric:tabular-nums}
+.badge{display:inline-flex; align-items:center; gap:var(--s1); padding:1px var(--s2);
+  border-radius:999px; background:var(--surface-2); color:var(--ink-2);
+  font-size:.76rem; font-weight:600; border:1px solid var(--line)}
+.badge svg{width:13px; height:13px; flex:none}
+.ep-desc{margin:var(--s3) 0 0; font-size:.92rem; color:var(--ink-2)}
+.ep-desc p{margin:0 0 var(--s2)}
+.ep-desc p:last-child{margin-bottom:0}
+.ep-desc p:empty{display:none}
+.more{margin-top:var(--s2); padding:0; border:0; background:none; color:var(--accent);
+  font:inherit; font-size:.85rem; font-weight:600; cursor:pointer; min-height:32px}
+.empty{padding:var(--s7) var(--s4); text-align:center; color:var(--ink-3)}
+
+/* ---------- player ---------- */
+.player{position:fixed; inset-inline:0; bottom:0; z-index:40;
+  background:var(--surface); border-top:1px solid var(--line-2);
+  padding:var(--s3) var(--s4) calc(var(--s3) + env(safe-area-inset-bottom));
+  box-shadow:0 -6px 24px rgba(36,31,23,.10); transform:translateY(110%);
+  transition:transform .24s cubic-bezier(.22,1,.36,1)}
+.player.open{transform:translateY(0)}
+.player-inner{max-width:820px; margin:0 auto; display:flex; align-items:center; gap:var(--s3)}
+.player-text{flex:1; min-width:0}
+.player-title{margin:0; font-size:.92rem; font-weight:600; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis}
+.player audio{width:100%; margin-top:var(--s2); height:36px}
+.close{width:44px; height:44px; flex:none; border:0; background:none; color:var(--ink-3);
+  cursor:pointer; border-radius:50%; display:grid; place-items:center}
+.close:hover{background:var(--surface-2); color:var(--ink)}
+.close svg{width:18px; height:18px}
+
+footer{border-top:1px solid var(--line); padding:var(--s5) 0 var(--s7);
+  color:var(--ink-3); font-size:.86rem}
+footer p{margin:0 0 var(--s2)}
+code{background:var(--surface-2); padding:2px 6px; border-radius:6px;
+  font-size:.86em; overflow-wrap:anywhere}
+
+@media (max-width:520px){
+  header.hero{padding-top:var(--s5)}
+  .cover{width:88px; height:88px}
+  .ep{padding:var(--s3)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#episodes">דילוג לרשימת השיעורים</a>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <img class="cover" src="cover.jpg" width="132" height="132"
+         alt="עטיפת הפודקאסט: הרב בן ציון אוריאל">
+    <div class="hero-text">
+      <h1>לומדים כוזרי עם הרב בן ציון אוריאל</h1>
+      <p class="byline">כל השיעורים על ספר הכוזרי — מההקדמה ועד סוף מאמר חמישי</p>
+      <p class="blurb">מה עניינם של עם ישראל? מדוע דווקא היהדות היא דת האמת? וכיצד מתקיים
+        הקשר בין האדם לבורא עולם? מאמר אחרי מאמר, סעיף אחרי סעיף.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="feed.xml">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none"/></svg>
+          כתובת הפודקאסט (RSS)
+        </a>
+        <a class="btn" href="https://podcasters.spotify.com/pod/show/--70959" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7.5 9.5c3-1 6.5-.7 9 .8"/><path d="M8 13c2.4-.8 5.2-.5 7.2.9"/><path d="M8.6 16.2c1.9-.6 4-.4 5.6.7"/></svg>
+          בספוטיפיי
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap">
+    <label class="search">
+      <span class="skip">חיפוש בשיעורים</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="חיפוש לפי נושא, סעיף או מספר שיעור" autocomplete="off">
+    </label>
+    <div class="chips" id="chips" role="group" aria-label="סינון לפי מאמר"></div>
+  </div>
+</div>
+
+<main class="wrap" id="episodes">
+  <div class="listbar">
+    <p class="count" id="count" role="status" aria-live="polite"></p>
+    <div class="sort" role="group" aria-label="סדר התצוגה">
+      <button class="chip" type="button" data-o="asc" aria-pressed="true">מהתחלה</button>
+      <button class="chip" type="button" data-o="desc" aria-pressed="false">מהחדש</button>
+    </div>
+  </div>
+  <div id="list"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>השיעורים נאמרו בישיבת בית אל. ההקלטות באדיבות אתר ישיבה.</p>
+    <p>כתובת הפיד להרשמה בכל אפליקציית פודקאסטים: <code id="feedurl">feed.xml</code></p>
+  </div>
+</footer>
+
+<div class="player" id="player" role="region" aria-label="נגן">
+  <div class="player-inner">
+    <div class="player-text">
+      <p class="player-title" id="p-title"></p>
+      <audio id="audio" controls preload="none"></audio>
+    </div>
+    <button class="close" id="p-close" aria-label="סגירת הנגן">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+const SECTIONS = {
+  m1:'מאמר ראשון — ביסוס אמונת ישראל',
+  m2:'מאמר שני — תנאי חול העניין הא-להי בעולם',
+  m3:'מאמר שלישי — עבודת ה׳ השלמה',
+  m4:'מאמר רביעי — הנבואה והחכמות',
+  m5:'מאמר חמישי — הפילוסופיה ומקומה',
+  bonus:'שיעורים נוספים'
+};
+const ICON_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.53.85l10-6.5a1 1 0 0 0 0-1.7l-10-6.5A1 1 0 0 0 8 5.5Z"/></svg>';
+const ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="4" height="14" rx="1"/><rect x="13" y="5" width="4" height="14" rx="1"/></svg>';
+const ICON_CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.2l2.6 1.6"/></svg>';
+
+const fmtDate = new Intl.DateTimeFormat('he-IL',{day:'numeric',month:'long',year:'numeric'});
+const fmtDay  = new Intl.DateTimeFormat('he-IL',{weekday:'long'});
+const strip = (h) => h.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+function dur(hhmmss){
+  const [h,m] = hhmmss.split(':').map(Number);
+  return h ? `שעה ו‑${m} דק׳` : `${m} דק׳`;
+}
+const esc = (s) => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let EPS = [], filter = 'all', query = '', order = 'asc';
+const audio = document.getElementById('audio');
+const player = document.getElementById('player');
+let currentN = null;
+
+document.getElementById('feedurl').textContent = location.origin + '/feed.xml';
+
+fetch('episodes.json').then(r => r.json()).then(data => {
+  const now = Date.now();
+  EPS = data.map(e => ({...e, live: new Date(e.publish_at).getTime() <= now}));
+  buildChips();
+  render();
+});
+
+function buildChips(){
+  const box = document.getElementById('chips');
+  const keys = ['all', ...Object.keys(SECTIONS).filter(k => EPS.some(e => e.maamar === k))];
+  box.innerHTML = keys.map(k => {
+    const label = k === 'all' ? 'הכל' : SECTIONS[k].split(' — ')[0];
+    return `<button class="chip" type="button" data-k="${k}" aria-pressed="${k===filter}">${label}</button>`;
+  }).join('');
+  box.addEventListener('click', ev => {
+    const b = ev.target.closest('.chip'); if(!b) return;
+    filter = b.dataset.k;
+    box.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.k === filter));
+    render();
+  });
+}
+
+document.querySelector('.sort').addEventListener('click', ev => {
+  const b = ev.target.closest('.chip'); if(!b) return;
+  order = b.dataset.o;
+  document.querySelectorAll('.sort .chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.o === order));
+  render();
+});
+
+document.getElementById('q').addEventListener('input', ev => {
+  clearTimeout(window._t);
+  window._t = setTimeout(() => { query = ev.target.value.trim(); render(); }, 160);
+});
+
+function matches(e){
+  if (filter !== 'all' && e.maamar !== filter) return false;
+  if (!query) return true;
+  const hay = (e.title + ' ' + strip(e.description_html) + ' #' + e.n).toLowerCase();
+  return query.toLowerCase().split(/\s+/).every(w => hay.includes(w));
+}
+
+function render(){
+  const rows = EPS.filter(matches)
+                  .sort((a,b) => order === 'asc' ? a.n - b.n : b.n - a.n);
+  const liveCount = EPS.filter(e => e.live).length;
+  document.getElementById('count').textContent =
+    query || filter !== 'all'
+      ? `${rows.length} שיעורים מתוך ${EPS.length}`
+      : `${EPS.length} שיעורים — ${liveCount} כבר עלו, ${EPS.length - liveCount} מתוזמנים להמשך`;
+
+  const list = document.getElementById('list');
+  if (!rows.length){
+    list.innerHTML = '<p class="empty">לא נמצא שיעור שמתאים לחיפוש. אפשר לנסות מילה אחרת, או מספר שיעור.</p>';
+    return;
+  }
+  let html = '', section = null, open = false;
+  for (const e of rows){
+    if (e.maamar !== section){
+      if (open) html += '</ol>';
+      section = e.maamar;
+      html += `<h2 class="section">${SECTIONS[section] || ''}</h2><ol class="eps">`;
+      open = true;
+    }
+    html += row(e);
+  }
+  if (open) html += '</ol>';
+  list.innerHTML = html;
+}
+
+function row(e){
+  const d = new Date(e.publish_at);
+  const control = e.live
+    ? `<button class="play" type="button" data-n="${e.n}" aria-label="נגן: ${esc(e.title)}">${ICON_PLAY}</button>`
+    : `<span class="locked" title="טרם עלה">${ICON_CLOCK}</span>`;
+  const when = e.live
+    ? `<span>${fmtDate.format(d)}</span>`
+    : `<span class="badge">${ICON_CLOCK} יעלה ב${fmtDay.format(d)}, ${fmtDate.format(d)}</span>`;
+  const desc = e.live
+    ? `<div class="ep-desc">${e.description_html}</div>`
+    : '';
+  return `<li class="ep ${e.live ? '' : 'upcoming'}" id="ep${e.n}" data-n="${e.n}">
+    ${control}
+    <div class="ep-body">
+      <h3 class="ep-title">${esc(e.title)}</h3>
+      <p class="ep-meta">${when}<span>${dur(e.duration)}</span></p>
+      ${desc}
+    </div>
+  </li>`;
+}
+
+document.getElementById('list').addEventListener('click', ev => {
+  const b = ev.target.closest('.play'); if(!b) return;
+  const n = Number(b.dataset.n);
+  if (currentN === n && !audio.paused){ audio.pause(); return; }
+  if (currentN === n){ audio.play(); return; }
+  const e = EPS.find(x => x.n === n);
+  currentN = n;
+  audio.src = e.url;
+  document.getElementById('p-title').textContent = e.title;
+  player.classList.add('open');
+  document.documentElement.style.setProperty('--player-h', player.offsetHeight + 'px');
+  audio.play().catch(() => {});
+  history.replaceState(null, '', '#ep' + n);
+  paint();
+});
+
+['play','pause','ended'].forEach(ev => audio.addEventListener(ev, paint));
+function paint(){
+  document.querySelectorAll('.ep').forEach(li => {
+    const on = Number(li.dataset.n) === currentN;
+    li.classList.toggle('is-playing', on);
+    const b = li.querySelector('.play');
+    if (b) b.innerHTML = (on && !audio.paused) ? ICON_PAUSE : ICON_PLAY;
+  });
+}
+
+document.getElementById('p-close').addEventListener('click', () => {
+  audio.pause();
+  player.classList.remove('open');
+  document.documentElement.style.setProperty('--player-h','0px');
+  currentN = null;
+  paint();
+});
+</script>
+</body>
+</html>
