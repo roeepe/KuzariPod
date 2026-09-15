@@ -124,6 +124,10 @@ ol.eps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column
   border-radius:999px; background:var(--surface-2); color:var(--ink-2);
   font-size:.76rem; font-weight:600; border:1px solid var(--line)}
 .badge svg{width:13px; height:13px; flex:none}
+.yt{display:inline-flex; align-items:center; gap:4px; color:var(--accent);
+  text-decoration:none; font-weight:600; font-size:.82rem; min-height:24px}
+.yt:hover{text-decoration:underline}
+.yt svg{width:15px; height:15px; flex:none}
 .ep-desc{margin:var(--s3) 0 0; font-size:.92rem; color:var(--ink-2)}
 .ep-desc p{margin:0 0 var(--s2)}
 .ep-desc p:last-child{margin-bottom:0}
@@ -181,6 +185,10 @@ code{background:var(--surface-2); padding:2px 6px; border-radius:6px;
         <a class="btn btn-primary" href="feed.xml">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none"/></svg>
           כתובת הפודקאסט (RSS)
+        </a>
+        <a class="btn" href="https://www.youtube.com/playlist?list=PLCCb7qAYb-GEA2UzF-DbvauEBUp7qGSsd" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10.5 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg>
+          ביוטיוב
         </a>
         <a class="btn" href="https://podcasters.spotify.com/pod/show/--70959" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M7.5 9.5c3-1 6.5-.7 9 .8"/><path d="M8 13c2.4-.8 5.2-.5 7.2.9"/><path d="M8.6 16.2c1.9-.6 4-.4 5.6.7"/></svg>
@@ -341,11 +349,18 @@ function row(e){
   const desc = e.live
     ? `<div class="ep-desc">${e.description_html}</div>`
     : '';
+  const yt = (e.live && e.youtube)
+    ? `<a class="yt" href="https://www.youtube.com/watch?v=${e.youtube}" rel="noopener"
+          aria-label="צפייה ביוטיוב: ${esc(e.title)}">
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10.5 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg>
+         צפייה
+       </a>`
+    : '';
   return `<li class="ep ${e.live ? '' : 'upcoming'}" id="ep${e.n}" data-n="${e.n}">
     ${control}
     <div class="ep-body">
       <h3 class="ep-title">${esc(e.title)}</h3>
-      <p class="ep-meta">${when}<span>${dur(e.duration)}</span></p>
+      <p class="ep-meta">${when}<span>${dur(e.duration)}</span>${yt}</p>
       ${desc}
     </div>
   </li>`;
