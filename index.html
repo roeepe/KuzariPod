@@ -10,7 +10,7 @@
 <meta property="og:image" content="cover.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F7F3EA">
-<link rel="icon" href="cover.jpg">
+<link rel="icon" href="cover-sm.jpg">
 <link rel="alternate" type="application/rss+xml" title="לומדים כוזרי" href="feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,6 +85,9 @@ input[type=search]::placeholder{color:var(--ink-3)}
 .chips{display:flex; gap:var(--s2); margin-top:var(--s3); overflow-x:auto;
   scrollbar-width:none; padding-bottom:2px}
 .chips::-webkit-scrollbar{display:none}
+/* שומרים מקום עד שהרשימה נטענת — אחרת הכל קופץ למטה כשהיא מגיעה (מדידת מהירות 2/11/2026) */
+.chips:empty{min-height:38px}
+#list:empty{min-height:100vh}
 .chip{flex:none; min-height:38px; padding:0 var(--s3); border-radius:999px;
   border:1px solid var(--line-2); background:var(--surface); color:var(--ink-2);
   font:inherit; font-size:.88rem; font-weight:600; cursor:pointer; white-space:nowrap;
@@ -174,7 +177,7 @@ code{background:var(--surface-2); padding:2px 6px; border-radius:6px;
 
 <header class="hero">
   <div class="wrap hero-grid">
-    <img class="cover" src="cover.jpg" width="132" height="132"
+    <img class="cover" src="cover-sm.jpg" width="132" height="132"
          alt="עטיפת הפודקאסט: הרב בן ציון אוריאל">
     <div class="hero-text">
       <h1>לומדים כוזרי עם הרב בן ציון אוריאל</h1>
